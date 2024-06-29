@@ -1,0 +1,337 @@
+/* Apply box-sizing universally */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Set the height for HTML and body to ensure full viewport coverage */
+html, body {
+    height: 100%;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    /* background-color: rgb(192, 192, 192); */
+
+    display: flex;
+    flex-direction: column;
+    /* align-items: stretch; /*Ensure children take full width */
+    /*border: 1px solid red; /* Debugging border */
+}
+
+body {
+    /* display: flex;
+    flex-direction: column;
+    min-height: 100vh; */
+    /* background-color: rgb(192, 192, 192); */
+    /* flex: 1;  */
+    /* Make body flex container take all available space */
+    /* border: 1px solid green;  */
+    /* Debugging border */
+    background-color: rgb(192, 192, 192);
+    display: flex; /* Make body flex container */
+    flex-direction: column; /* Stack children vertically */
+}
+
+#root {
+    flex: 1; /* Make #root take all available space */
+  }
+
+.container {
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: stretch;  */
+    /* Ensure children take full width */
+    /* flex-grow: 1;  */
+    /* Enables container object to fill in space so its height matches the body even when it expands */
+    /* padding: 10px; */
+    /* border: solid rgb(7, 7, 7) 1px; */
+    /* border: 1px solid blue;  */
+    /* Debugging border */
+    /* background-color: rgb(235, 235, 209); */
+
+    height: 100%; 
+    /* Make app-container take full height of parent */
+    /* padding: 10px; */
+    /* border: solid rgb(7, 7, 7) 1px; */
+    /* background-color: rgb(235, 235, 209); */
+}
+
+.block-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* Ensure children take full width */
+    position: relative;
+    left: 8%;
+    width: 85%;
+    height: 100%;
+    text-align: center; /* Align center for the "Search for wild Pokemon" link */
+    padding: 10px;
+    /* border: solid ghostwhite 1px; */
+    border: solid black 1px;
+    background-color: rgb(155, 214, 193);
+}
+
+/* Clearfix hack for floating elements */
+/* .container::after,
+.block-container::after {
+  content: "";
+  display: table;
+  clear: both;
+} */
+
+/* login form */
+#login-register {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px;
+}
+
+#form {
+    padding: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 150px;
+    top: 80px;
+
+    /* border: solid black 1px; */
+}
+
+#form-piece {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 300px;
+
+}
+/* end of login form css */
+
+.battle-page {
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 96vh;
+}
+
+#battle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 150px;
+    justify-content: space-evenly;
+
+    font-size: larger;
+}
+
+.message {
+    font-size: 18px;
+}
+
+#encounter {
+    font-size: larger;
+}
+
+.pokemon-image {
+    width: 250px;
+    height: 250px;
+}
+
+.pokemon-container{
+    height: 210px;
+    width: 200px;
+}
+/* main page (reuses top-left)*/
+
+.top-right {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+
+.main {
+    /* border: 1px solid black; */
+    height: 100%;
+}
+
+#user {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    margin-top: 50px; /*Adjust as needed */
+    padding: 10px;
+    font-size: large;
+}
+
+.center {
+    position: relative;
+    top: 45%;
+}
+/* end of main page */
+
+/* poke-details */
+.pokemon-details {
+    display: flex;
+    flex-wrap: wrap;
+    /*justify-content: space-between; /* Aligns items along the main axis */
+    align-items: flex-start; /* Aligns items along the cross axis */
+    height: 96vh;
+}
+
+.pokemon-image {
+    float: right;
+    margin-left: 20px; /* Adjust as needed */
+    
+}
+
+.details {
+    position: relative;
+    top: 150px;
+}
+
+.pokemon-info {
+    flex-grow: 1;
+    max-width: 60%; /* Limit width of info section */
+    margin-top: 80px;
+    padding: 5px;
+}
+
+.moves {
+    /* Add styles for moves section if needed */
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    font-size: large;
+    /* justify-content: space-between; */
+}
+
+.move {
+    width: 50%; /* Each move takes up half of the container */
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+    padding: 2px; /* Adjust as needed */
+    border: 1px solid black;
+}
+
+.top-left {
+    padding: 10px; /* Adjust padding as needed */
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+#name-type {
+    display: flex;
+    flex-direction: column;
+    font-size: large;
+    justify-content: space-around;
+    margin: 10px;
+    height: 90px;
+}
+
+.poke-type {
+    position: relative;
+    left: 35%;
+    display: flex;
+    justify-content: space-evenly;
+    width: 35%;
+}
+
+.type {
+    position: relative;
+    bottom: 7px;
+    background-color:rgb(212, 180, 180);
+    font-size: large;
+    border: solid rgb(0, 0, 0) 2px;
+    border-radius: 20px;
+    padding: 7px;
+}
+
+.rename-button {
+    display: inline-block;
+    /* padding: 10px 20px; */
+    /* background-color: #ffffff; */
+    /* color: rgb(0, 0, 0); */
+    /* text-align: center; */
+    /* text-decoration: none; */
+    /* font-size: 18px; */
+    /* border: solid black 2px; */
+    /* border-radius: 5px; */
+    /* cursor: pointer; */
+}
+/* end of poke details */
+
+/* PC */
+#pc {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.hidden-bullets {
+    list-style-type: none;
+}
+
+.pc-pokemon-image {
+    width: 200px;
+    height: 200px;
+}
+
+.top {
+    padding: 10px; /* Adjust padding as needed */
+    position: absolute;
+    top: 0;
+    left: 45%;
+    width: 100px;
+}
+/* end of PC */
+
+.hidden {
+    display: none;
+}
+
+.button-style {
+    display: inline-block;
+    padding: 5px 10px;
+    /* background-color: #d3d3d3; */
+    color: rgb(0, 0, 0);
+    text-align: center;
+    text-decoration: none;
+    font-size: 17px;
+    /* border: solid black 1px; /* Can add a background color to the links if desired */
+    /* border-radius: 20px; */
+    cursor: pointer;
+
+    /* added by chatgpt */
+    background: none;
+    border: none;
+}
+
+/* also added by chatgpt */
+.button-style:hover {
+    text-decoration: underline;
+}
+
+.menu {
+    position: relative;
+    bottom: 20px;
+}
+
+/* Guess additional styling */
+.gray {
+    filter: brightness(0);
+    transition: filter 0.5s ease;
+}
+
+.guess-attempts {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+
+    /* changed from width: 25%; */
+    width: 185px;
+    /* border: solid black 1px; */
+}
