@@ -1,10 +1,8 @@
-from flask import Flask, render_template, redirect, flash, request, session, url_for, jsonify
+from flask import Flask, redirect, request, session, jsonify
 import jinja2
 from forms import LoginForm, RegisterForm
 from model import connect_to_db, db
 import crud
-
-from flask_wtf.csrf import CSRFProtect, generate_csrf
 
 
 from flask_cors import CORS

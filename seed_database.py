@@ -18,23 +18,6 @@ os.system('createdb specs-capstone')
 model.connect_to_db(server.app)
 
 def seed_moves():
-    # chatgpt changes
-    # try:
-    #     response = requests.get('https://pokeapi.co/api/v2/move/?limit=919')
-    #     response.raise_for_status()
-    #     data = response.json()
-    #     for move in data['results']:
-    #         move_data = requests.get(move['url']).json()
-    #         move_instance = crud.create_move(
-    #             name=move_data['name'],
-    #             power=move_data['power'],
-    #             accuracy=move_data['accuracy'],
-    #             pp=move_data['pp']
-    #         )
-    #         model.db.session.add(move_instance)
-    #     model.db.session.commit()
-    # except requests.RequestException as e:
-    #     print(f"Error seeding moves: {e}")
 
     # Fetch data from PokeAPI for moves
     response = requests.get('https://pokeapi.co/api/v2/move/?limit=919')
@@ -93,14 +76,6 @@ def seed_pokemon():
             poketype2=poke_types[1] if len(poke_types) > 1 else None
         )
         model.db.session.add(pokemon_instance)
-
-        # pokemon_instance = crud.create_pokemon(
-        #     name=pokemon_data['name'],
-        #     poketype=pokemon_data['types'][0]['type']['name'],
-        #     # poketype1=pokemon_data['types'][0]['type']['name'],
-        #     # poketype2=pokemon_data['types'][1]['type']['name']
-        # )
-        # model.db.session.add(pokemon_instance)
     
     model.db.session.commit()
 

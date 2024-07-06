@@ -7,17 +7,6 @@ def create_user(username, password):
     """Create and return a new user."""
 
     user = User(username=username, password=password)
-    # chatgpt change
-    # try:
-    #     user = User(username=username, password=password)
-    #     db.session.add(user)
-    #     db.session.commit()
-    #     return user
-    # except Exception as e:
-    #     db.session.rollback()
-    #     print(f"Error creating user: {e}")
-    #     return None
-
     return user
 
 def get_users():
