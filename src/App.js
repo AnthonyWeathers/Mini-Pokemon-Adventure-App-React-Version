@@ -22,11 +22,8 @@ function App() {
           <Router>
               <Routes>
                 <Route path="/login" element={<Login />} />
-                {/* <Route path="/login" element={<Login onLogin={handleLogin} />} /> */}
                 <Route path="/register" element={<Register />} />
-                {/* <Route path="/dashboard" element={<Dashboard user={user} />} /> */}
                 <Route path="/" element={<Login />} />
-                {/* <Route path="/" element={<Login onLogin={handleLogin} />} /> */}
                 <Route path="/main" element={<Main />} />
                 <Route path="/guess" element={<Guess />} />
                 <Route path="/PC" element={<PC onPokeSelect={handlePokemonSelect} />} />
